@@ -16,7 +16,7 @@ RUN chmod -R 755 /var/www/html
 
 EXPOSE 80
 
-CMD /etc/init.d/mysql start && /etc/init.d/lighttpd start && /bin/bash
+CMD /etc/init.d/mysql start && /etc/init.d/lighttpd start && sleep infinity
 
 # docker built -t lwt .
 # docker run -it -p 8010:80 lwt
