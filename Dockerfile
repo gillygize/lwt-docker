@@ -1,13 +1,10 @@
 FROM debian
 
 # Set up LLMP server
-RUN apt update && apt upgrade
-RUN apt install lighttpd --assume-yes
-RUN apt install php5-cgi php5-mysql --assume-yes
-RUN apt install unzip telnet --assume-yes
+RUN apt-get update && apt-get upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y lighttpd php5-cgi php5-mysql unzip mysql-server mysql-client
 RUN lighttpd-enable-mod fastcgi
 RUN lighttpd-enable-mod fastcgi-php
-RUN DEBIAN_FRONTEND=noninteractive apt install mysql-server mysql-client --assume-yes
 RUN rm /var/www/html/index.lighttpd.html
 
 # Install LWT
