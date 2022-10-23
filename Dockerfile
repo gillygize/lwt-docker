@@ -9,7 +9,7 @@ RUN rm /var/www/html/index.lighttpd.html
 
 # Install LWT
 #COPY lwt_v_1_6_1.zip /tmp/lwt.zip
-ADD http://downloads.sourceforge.net/project/lwt/lwt_v_1_6_1.zip /tmp/lwt.zip
+ADD https://github.com/HugoFara/lwt/archive/refs/tags/2.5.2.zip /tmp/lwt.zip
 RUN cd /var/www/html && unzip /tmp/lwt.zip && rm /tmp/lwt.zip
 RUN mv /var/www/html/connect_xampp.inc.php /var/www/html/connect.inc.php
 RUN chmod -R 755 /var/www/html
