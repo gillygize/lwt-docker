@@ -2,7 +2,7 @@ FROM debian
 
 # Set up LLMP server
 RUN apt-get update && apt-get upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y lighttpd php5-cgi php5-mysql unzip mysql-server mysql-client
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y lighttpd php5-cgi php-mysql unzip mariadb-server mariadb-client
 RUN lighttpd-enable-mod fastcgi
 RUN lighttpd-enable-mod fastcgi-php
 RUN rm /var/www/html/index.lighttpd.html
