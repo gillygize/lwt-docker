@@ -21,7 +21,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build the Docker image
-      run:
+      run: |
         docker build . --file Dockerfile --tag lwt:$(date +%s)
         docker run ghcr.io/gillygize/lwt:$(date +%s)
         docker push ghcr.io/gillygize/lwt:$(date +%s)
